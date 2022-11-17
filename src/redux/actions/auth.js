@@ -34,16 +34,6 @@ export const completeLogin = (token, isReload) => {
     !isReload &&
      Alert.alert("Success", "Login Successful! Welcome to Klutchh.");
     dispatch(getCurrentUser(token));
-
-    dispatch(setAlertModal({
-      type: 'Success',
-      title: 'Login Successful!',
-      subtitle: 'Welcome to Klutchh.'
-    })); 
-    
-    setTimeout(() => {
-      dispatch(setAlertModal(null))
-    }, 3000);
   };
 };
 

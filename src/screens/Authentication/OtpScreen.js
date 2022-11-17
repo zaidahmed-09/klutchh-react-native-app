@@ -4,7 +4,7 @@ import { View, Text, SafeAreaView, TextInput, Alert, StyleSheet, TouchableOpacit
 import OTPTextInput from "react-native-otp-textinput";
 
 import { useDispatch } from "react-redux";
-import { completeLogin, setStackMode } from "../../redux/actions/auth";
+import { completeLogin, setAlertModal, setStackMode } from "../../redux/actions/auth";
 
 import styled from "styled-components";
 import { GlobalButton, TextWhite } from "../../components/reusables";
@@ -79,6 +79,13 @@ const OtpScreen = ({route, navigation,}) => {
 
             if(resp.status == "SUCCESS"){
                 // // console.log("resp => ", resp);
+
+                dispatch(setAlertModal({
+                    type: 'Success',
+                    title: 'Login Successful!',
+                    subtitle: 'Welcome to Klutchh.'
+                })); 
+
                 dispatch(completeLogin(resp.token));
                 dispatch(setStackMode("default"));
             }else{

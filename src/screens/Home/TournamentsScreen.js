@@ -20,6 +20,7 @@ import { BASE_URL, GAMES } from "../../extras/constants";
 import { Skeleton } from "react-native-skeletons";
 import { icons } from "../../utills/Icons";
 import { useDispatch, useSelector } from "react-redux";
+import AlertModal from "../../components/modal/AlertModal";
 
 
 const DeviceWidth = Dimensions.get("window").width;
@@ -329,6 +330,15 @@ const TournamentsScreen = ({ navigation }) => {
           )}
         </ScrollView>
       </ScrollView>
+
+      
+         {auth?.alertModal != null
+          ? 
+          <AlertModal />
+          :
+          null
+          }
+
       
       <View style={{padding:10,marginBottom:40,}}></View>
     </SafeAreaView>

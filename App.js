@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react'
 
-import { StyleSheet, Text, View, Platform } from "react-native";
+import { StyleSheet, Text, View, Platform, LogBox } from "react-native";
 import { Provider } from "react-redux";
 import store from "./src/redux/store";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -9,6 +9,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 import AppNavigation from './AppNavigation';
 
+LogBox.ignoreAllLogs(true)
 
 const App = () => {
 

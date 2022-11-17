@@ -98,13 +98,21 @@ const SignupVerificationScreen = ({route, navigation,}) => {
 
                 dispatch(setAlertModal({
                     type: 'Success',
-                    title: 'Sign up Successful!',
-                    subtitle: 'Welcome to Klutchh.'
-                  })); 
+                    modalType: 'SignupModal',
+                    title: 'Sign Up Bonus!',
+                    subtitle: 'Enter your first contest for free!',
+                    amount: loginData?.referralCodeUsed ? '20' : '10',
+                })); 
+
+                // dispatch(setAlertModal({
+                //     type: 'Success',
+                //     title: 'Sign up Successful!',
+                //     subtitle: 'Welcome to Klutchh.'
+                //   })); 
                   
-                setTimeout(() => {
-                    dispatch(setAlertModal(null))
-                }, 3000);
+                // setTimeout(() => {
+                //     dispatch(setAlertModal(null))
+                // }, 3000);
                 
                 
                 dispatch(completeLogin(resp.token));
