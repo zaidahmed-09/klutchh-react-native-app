@@ -17,6 +17,8 @@ import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import colors from './src/constants/colors';
 
 
+import SplashScreen from 'react-native-splash-screen';
+
 const AppNavigation = () => {
 
     const auth = useSelector((state) => state.auth);
@@ -31,6 +33,9 @@ const AppNavigation = () => {
     }, [])
 
     React.useEffect(() => {
+
+      SplashScreen.hide()
+
         if (auth?.loggedIn && Platform.OS === "android") {
           checkAppVersion();
         }

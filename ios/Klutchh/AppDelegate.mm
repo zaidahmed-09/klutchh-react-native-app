@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+#import "RNSplashScreen.h"
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
@@ -7,7 +8,8 @@
 #import <React/RCTAppSetupUtils.h>
 
 #if RCT_NEW_ARCH_ENABLED
-#import <React/CoreModulesPlugins.h>
+#import <React/
+.h>
 #import <React/RCTCxxBridgeDelegate.h>
 #import <React/RCTFabricSurfaceHostingProxyRootView.h>
 #import <React/RCTSurfacePresenter.h>
@@ -57,6 +59,8 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  [RNSplashScreen show];
   return YES;
 }
 
