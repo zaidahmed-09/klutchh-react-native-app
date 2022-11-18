@@ -33,9 +33,9 @@ const LeaderboardScreen = (props) => {
             },
         })
         .then((response) => {
-            console.log("response.data?.data?.users => ",response.data?.data?.user);
-            setLeaderBoardDetails(response.data?.data?.users)
-            setCurrentUser(response.data?.data?.user)
+            console.log("response.data?.data?.users => ",response?.data?.data?.user);
+            setLeaderBoardDetails(response?.data?.data?.users)
+            setCurrentUser(response?.data?.data?.user)
             setLoading(false)
             
         })

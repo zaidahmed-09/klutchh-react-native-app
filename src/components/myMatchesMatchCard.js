@@ -34,8 +34,8 @@ const MyMatchesMatchCard = ({team, isLive, status, hideBorder, isDisabledTime, t
 
   const imagesArray = [pubgMatchCard,pubgMatchCard2,pubgMatchCard,pubgMatchCard2]
 
-  console.log(" match =>>> teams ", teams);
-  console.log(" match =>>> match ", match);
+  // console.log(" match =>>> teams ", teams);
+  // console.log(" match =>>> match ", match);
   
   
   const [expanded, setExpanded] = useState(false);
@@ -155,7 +155,7 @@ const MyMatchesMatchCard = ({team, isLive, status, hideBorder, isDisabledTime, t
                     <View style={{marginTop: 6, flexDirection: 'row', alignItems: 'center'}} >
                       <Image source={icons.location} style={{height: 16, width: 16, marginRight: 8}} />
                     <Text  style={{fontSize: 12, fontFamily: 'Inter-SemiBold', color: 'white'}}>
-                    {(match?.map).charAt(0).toUpperCase() + (match?.map).slice(1)}
+                    {match?.map}
                     </Text>
                     </View>
                   </View>

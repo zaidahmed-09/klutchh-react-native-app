@@ -99,7 +99,7 @@ const HeroContestCard = ({hideImage, image1,image2,name1,name2,isHero=true, game
                         
                         {tour_title
                         ?
-                          <Text style={{color:"white", textAlign: "left", width: 200, fontSize: 14, marginBottom: 6, fontFamily:"Inter-Medium"}}>{(tour_title).trim()}</Text>
+                          <Text style={{color:"white", textAlign: "left", width: 200, fontSize: 14, marginBottom: 6, fontFamily:"Inter-Medium"}}>{tour_title}</Text>
                         :
                         <Text style={{color:"white", textAlign: "left", width: 200, fontSize: 14, marginBottom: 6, fontFamily:"Inter-Medium"}}>{match_details?.tour_id?.name}</Text>
                         }
@@ -110,7 +110,7 @@ const HeroContestCard = ({hideImage, image1,image2,name1,name2,isHero=true, game
                         <View style={{flexDirection: 'row', alignItems: 'center'}} >
                             <Image source={icons.location} style={{height: 16, width: 16, marginRight: 8}} />
                             <Text style={{color:"white",fontSize: 12, fontFamily:"Inter-Medium"}}>
-                            {(match_details?.map).charAt(0).toUpperCase() + (match_details?.map).slice(1)}
+                              {match_details?.map}
                             </Text>
                         </View>
                     </View>
@@ -192,7 +192,7 @@ const HeroContestCard = ({hideImage, image1,image2,name1,name2,isHero=true, game
                     }}
                 >
                     <View style={{marginTop: 10, width: '60%'}} >
-                        <Text style={{color:"white",fontSize: 14, marginBottom: 6, fontFamily:"Inter-Medium"}}>{(tour_title).trim()}</Text>
+                        <Text style={{color:"white",fontSize: 14, marginBottom: 6, fontFamily:"Inter-Medium"}}>{tour_title}</Text>
                         <Text style={{color:"white", fontSize: 12, marginBottom: 10, fontFamily:"Inter-Medium"}}>{match_details?.name}</Text>
                     </View>
                     <View style={{}} >
@@ -200,7 +200,7 @@ const HeroContestCard = ({hideImage, image1,image2,name1,name2,isHero=true, game
                         <View style={{flexDirection: 'row', alignItems: 'center'}} >
                             <Image source={icons.location} style={{height: 16, width: 16, marginRight: 8}} />
                             <Text style={{color:"white",fontSize: 12, fontFamily:"Inter-Medium"}}>
-                              {(match_details?.map).charAt(0).toUpperCase() + (match_details?.map).slice(1)}
+                            {match_details?.map}
                             </Text>
                         </View>
                     </View>
@@ -235,7 +235,7 @@ const HeroContestCard = ({hideImage, image1,image2,name1,name2,isHero=true, game
         ?
           <View style={{flexDirection: 'row', marginTop: 15,  justifyContent: 'space-between', width: DeviceWidth-32}} >
             <View style={{flex: 1, marginRight: 20}} >
-              <Text style={{color:"white", fontSize: 14, lineHeight: 24, marginBottom: 0,fontFamily:"Inter-Medium"}}>{(tour_title).trim()}</Text>
+              <Text style={{color:"white", fontSize: 14, lineHeight: 24, marginBottom: 0,fontFamily:"Inter-Medium"}}>{tour_title}</Text>
             </View>
             <View style={{marginRight: 15, alignItems: 'center', justifyContent: 'center', marginBottom: 10}} >
               {contest_status == 'completed'
@@ -281,7 +281,7 @@ const HeroContestCard = ({hideImage, image1,image2,name1,name2,isHero=true, game
         </View>
         :  
         <View style={{ alignItems: 'center'}} >
-          <Text style={{color:"white",fontSize: 14, marginBottom: 0, textAlign: 'center', fontFamily:"Inter-Medium"}}>{(tour_title).trim()}</Text>
+          <Text style={{color:"white",fontSize: 14, marginBottom: 0, textAlign: 'center', fontFamily:"Inter-Medium"}}>{tour_title}</Text>
         </View>
         }
 
