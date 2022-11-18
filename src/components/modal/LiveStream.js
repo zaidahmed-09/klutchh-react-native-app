@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { Text, View, Image, Dimensions, StyleSheet, TouchableOpacity, Modal, } from "react-native";
 import { icons } from '../../../utills/Icons';
 
-import { Video, AVPlaybackStatus } from 'expo-av';
+//import { Video, AVPlaybackStatus } from 'expo-av';
 
 const LiveStream = ({showModal, onCloseModal, streamUrl}) => {
 
@@ -26,7 +26,7 @@ const LiveStream = ({showModal, onCloseModal, streamUrl}) => {
                                 style={{alignItems: 'flex-end' , width: '100%' }} >
                                 <Image source={icons.cross_pink} style={{height: 30, width: 30}} />
                             </TouchableOpacity> */}
-                            <Video
+                            {/* <Video
                                 shouldPlay={true}
                                 ref={video}
                                 style={{height: '100%', width:'100%'}}
@@ -38,7 +38,8 @@ const LiveStream = ({showModal, onCloseModal, streamUrl}) => {
                                 resizeMode="contain"
                                 //isLooping
                                 onPlaybackStatusUpdate={status => setStatus(() => status)}
-                            />
+                            /> */}
+                            <Text> </Text>
 
                     </View>
                 </TouchableOpacity>

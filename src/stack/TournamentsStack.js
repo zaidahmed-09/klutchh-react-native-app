@@ -15,7 +15,7 @@ import ContestPreview from '../screens/Home/ContestPreview';
 import ContestDetails from '../screens/Home/ContestDetails';
 import ParticipateContest from '../screens/Home/ParticipateContest';
 import CompletedTournaments from '../screens/Home/CompletedTournaments';
-
+import LiveParticipateContest from '../screens/Home/LiveParticipateContest';
 
 
 const Stack = createStackNavigator();
@@ -87,6 +87,17 @@ const TournamentsStack = ({route, navigation}) => {
                 headerTitle: 'Live Match',
                 headerStyle: {backgroundColor: colors.PRIMARY_COLOR,borderWidth: 0, elevation: 0, shadowOpacity: 0,},
                 headerBackTitleVisible: false, 
+                }}
+            />
+             <Stack.Screen
+                name="LiveParticipateContest"
+                component={LiveParticipateContest}
+                options={{
+                    headerTintColor: '#fff',
+                    headerTitle: 'Live Match',
+                    headerTitleStyle: {fontFamily: 'Inter-Bold', fontSize: 15},
+                    headerStyle: {backgroundColor: colors.PRIMARY_COLOR,borderWidth: 0, elevation: 0, shadowOpacity: 0,},
+                    headerBackTitleVisible: false, 
                 }}
             />
         </Stack.Navigator>

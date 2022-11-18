@@ -11,6 +11,11 @@ import AppNavigation from './AppNavigation';
 
 LogBox.ignoreAllLogs(true)
 
+LogBox.ignoreLogs([
+    "ViewPropTypes will be removed",
+    "ColorPropType will be removed",
+    ])
+    
 const App = () => {
 
     const queryClient = new QueryClient();

@@ -225,7 +225,7 @@ const CustomSidebarMenu = (props) => {
                         
                     
 
-                        <Pressable
+                        {/* <Pressable
                             onPress={() => props.navigation.navigate("NewsFeed")}
                             style={{
                             flexDirection: "row",
@@ -244,7 +244,7 @@ const CustomSidebarMenu = (props) => {
                             >
                             News Feed
                             </Text>
-                        </Pressable>
+                        </Pressable> */}
                     </View>
 
 

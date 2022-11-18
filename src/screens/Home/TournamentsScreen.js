@@ -223,14 +223,14 @@ const TournamentsScreen = ({ navigation }) => {
             <View style={{marginBottom: Platform.OS === 'ios' ? 40 : 60, marginTop: 20}} >
 
               <View>
-                  {/* {matches && <View style={{}} >
+                  {matches && <View style={{}} >
                     <View style={{}} >
                       <TournamentCardLive
                           navigation={navigation}
                           tournamentMatches={matches}
                         />
                     </View>
-                  </View>} */}
+                  </View>}
               </View>
          
             {<Text style={{
