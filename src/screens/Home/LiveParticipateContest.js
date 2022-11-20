@@ -112,30 +112,16 @@ const LiveParticipateContest = (props) => {
                 <>
              <ScrollView>
                 <View style={{alignItems: 'center', marginTop: 20, marginBottom: 20 }} >
-                    
-                    {/* <HeroContestCard
-                        image1={match?.teams[0]?.opponent?.image_url}
-                        image2={match?.teams[1]?.opponent?.image_url}
-                        name1 = {match?.teams[0]?.opponent?.name}
-                        name2 = {match?.teams[1]?.opponent?.name}
-                        tour_title={tour_title}
-                    /> */}
 
-                    
-
-                    {/* {(match.streams?.english?.raw_url != null || match.streams?.english?.embed_url != null)
-                    && (match.streams?.english?.raw_url != '' || match.streams?.english?.embed_url != '')
-                    &&(<View>
-                        <WatchLiveBtn onPress={() => {
-                            setShowLiveStream(true)
-                            }} >
-                            <Text style={{
-                                fontSize: 10,
-                                fontWeight: 'bold',
-                                color: "white",
-                            }}>WATCH LIVE</Text>
-                        </WatchLiveBtn>
-                    </View>)} */}
+                {gameType(match?.game_type) && (
+                <View style={{flexDirection: 'row', justifyContent: 'space-between',  width: DeviceWidth-50 }} >
+                        <Text style={{color: 'white', width:'40%',  textAlign: 'right'}} >Squads</Text>
+                        <View style={{flexDirection: 'row', }}>
+                        <Text style={{color: 'white', marginRight: 30}} >K/D</Text>
+                        <Text style={{color: 'white'}} >Credits</Text>
+                        </View>
+                    </View>
+                    )}
 
                     <TeamSelect
                         data={match?.teams}

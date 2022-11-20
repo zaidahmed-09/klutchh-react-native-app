@@ -85,7 +85,7 @@ const TabNavigationStack = () => {
                  tabBarStyle: ((route) => {
                   
                   const routeName = getFocusedRouteNameFromRoute(route) ?? ""
-                  if (routeName === 'ContestPreview' || routeName === 'ParticipatedUpcomingOverview' || routeName === 'EditParticipateContest' || routeName === 'EditPreviewTeam' || routeName === 'LiveParticipateContest' || routeName === 'PreviewTeam' || routeName === 'ContestDetails' || routeName === 'ParticipateContest' ||  routeName === 'MatchDetails') {
+                  if (routeName === 'ContestPreview' || routeName == 'ParticipatedContestOverview' || routeName === 'ParticipatedUpcomingOverview' || routeName === 'EditParticipateContest' || routeName === 'EditPreviewTeam' || routeName === 'LiveParticipateContest' || routeName === 'PreviewTeam' || routeName === 'ContestDetails' || routeName === 'ParticipateContest' ||  routeName === 'MatchDetails') {
                     return { display: "none",  }
                   }
                   return  styles.tabbarStyle

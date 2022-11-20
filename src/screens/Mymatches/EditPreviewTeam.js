@@ -30,6 +30,7 @@ import { GlobalButton, TextWhite } from "../../components/reusables";
 
 import HeroContestCard from "../../components/HeroContestCard";
 import { CalcTime } from "../../components/CalcTime";
+import StepProgress from "../../components/progressbar/StepProgress";
 
 
 const DeviceWidth = Dimensions.get("window").width;
@@ -176,6 +177,7 @@ function EditPreviewTeam({
              border_color={matches?.border_color}
              border_color2={matches?.border_color2}
              />
+               <StepProgress currentIdx={3} />
        </View>
 
 

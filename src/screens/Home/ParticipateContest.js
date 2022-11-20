@@ -145,35 +145,9 @@ const ParticipateContest = ({ navigation, route }) => {
              />
              <StepProgress currentIdx={2} />
 
-          {/* {!isGroupType ? (
-            <HeroContestCard 
-                  image1={matches?.teams[0]?.opponent?.image_url}
-                  image2={matches?.teams[1]?.opponent?.image_url}
-                  name1 = {matches?.teams[0]?.opponent?.name}
-                  name2 = {matches?.teams[1]?.opponent?.name}
-                  // image1={contest?.match_id?.teams[0]?.image_url}
-                  // image2={contest?.match_id?.teams[1]?.image_url}
-                  // name1 = {contest?.match_id?.teams[0]?.name}
-                  // name2 = {contest?.match_id?.teams[1]?.name}
-                  isHero={true}
-                />
-          ) : (
-            <HeroContestCard 
-                  image1={matches?.teams[0]?.image_url}
-                  image2={matches?.teams[1]?.image_url}
-                  name1 = {matches?.teams[0]?.name}
-                  name2 = {matches?.teams[1]?.name}
-                  // image1={contest?.match_id?.teams[0]?.image_url}
-                  // image2={contest?.match_id?.teams[1]?.image_url}
-                  // name1 = {contest?.match_id?.teams[0]?.name}
-                  // name2 = {contest?.match_id?.teams[1]?.name}
-                  isHero={false}
-                />
-          )} */}
-
           {isGroupType && (
-              <View style={{flexDirection: 'row', justifyContent: 'space-evenly', width: 330 }} >
-                <Text style={{color: 'white'}} >Squads</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'space-evenly', width: DeviceWidth-40 }} >
+                <Text style={{color: 'white', width: '30%', marginRight: 50, textAlign: 'right',}} >Squads</Text>
                 <Text style={{color: 'white', marginLeft: 10,}} >K/D</Text>
                 <Text style={{color: 'white'}} >Credits</Text>
                 <Text style={{color: 'white'}} > </Text>

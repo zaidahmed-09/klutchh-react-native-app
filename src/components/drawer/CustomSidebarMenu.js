@@ -68,10 +68,10 @@ const CustomSidebarMenu = (props) => {
                         >
                             <Image
                                 style={{ width: 44, height: 44, marginRight: 17 }}
-                                // source={{
-                                // uri: `data:image/image/png;base64,${auth?.user?.avatar_id?.avatar_data.toString('base64')}`
-                                // }}
-                                source={icons.avatar1}
+                                source={{
+                                uri: `data:image/image/png;base64,${auth?.user?.avatar_id?.avatar_data?.toString('base64')}`
+                                }}
+                                //source={icons.avatar1}
                             />
 
                             <View>

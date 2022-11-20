@@ -28,9 +28,8 @@ border: 1px solid #FFFFFF80;
 background: #FFFEFF33;
 border-radius: 8px;
 width: 100%;
+font-family:"Inter-Medium";
 `
-//font-family:"Inter-Medium";
-
 const Input = styled(TextInput)`
 background: #1C1C1E80;
 color: white;
@@ -38,8 +37,9 @@ padding: 12px;
 border-radius: 4px;
 margin-bottom: 5px;
 font-size:14px;
+font-family:"Inter-Medium";
 `
-//font-family:"Inter-Medium";
+
 const CheckBoxContainer = styled(View)`
   display: flex;
   flex-direction: row;
@@ -105,7 +105,7 @@ const SignupScreen = (props) => {
       <Formik
         onSubmit={(values) => handleSubmit(values)}
         initialValues={initialValues}
-        validationSchema={validationSchema}
+        //validationSchema={validationSchema}
       >
         {({
           handleChange,

@@ -122,11 +122,6 @@ function PreviewTeam({
 
       .catch((err) => {
 
-        console.log('====================================');
-        console.log("preview team status = >", err);
-        console.log("preview team status = >", err.status);
-        
-        console.log('====================================');
         try {
           switch (err?.status) {
             case 401:

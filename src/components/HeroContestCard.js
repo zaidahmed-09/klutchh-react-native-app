@@ -5,7 +5,7 @@ import klutchhLogo from "../../assets/logo_mark.png";
 import vs from "../../assets/vs.png";
 import styled from "styled-components";
 import { icons } from "../utills/Icons";
-
+import Live from './Live';
 
 const DeviceWidth = Dimensions.get("window").width;
 

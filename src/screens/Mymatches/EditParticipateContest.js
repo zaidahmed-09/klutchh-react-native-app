@@ -15,6 +15,7 @@ import { BASE_URL } from "../../extras/constants";
 import { CalcTime } from "../../components/CalcTime";
 
 import { icons } from "../../utills/Icons";
+import StepProgress from "../../components/progressbar/StepProgress";
 
 const TotalCreditsBtn = styled(TouchableOpacity)`
 background:#ffffff10;
@@ -120,7 +121,7 @@ const EditParticipateContest = ({ navigation, route }) => {
         <ScrollView contentContainerStyle={{alignItems: 'center'}} >
           <View style={{
             display:"flex",
-            marginTop: 10,
+            marginTop: 60,
             alignItems:"center",
           }}>
 
@@ -183,6 +184,7 @@ const EditParticipateContest = ({ navigation, route }) => {
              border_color={matches?.border_color}
              border_color2={matches?.border_color2}
              />
+             <StepProgress currentIdx={2} />
 
           <TeamSelect
             data={contest?.match_id?.teams}

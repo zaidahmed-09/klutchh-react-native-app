@@ -14,9 +14,9 @@ margin-bottom: 20px;
 export const TextWhite = styled(Text)`
 color: white;
 font-size: 16px;
-
+font-family: Inter-SemiBold;
 ` 
-//font-family: Inter-Bold;
+
 
 export const GlobalButtonInactive = styled(TouchableOpacity)`
 background-color: #FFFFFF20;
