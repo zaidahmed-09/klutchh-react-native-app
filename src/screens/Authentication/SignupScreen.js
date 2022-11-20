@@ -103,7 +103,7 @@ const SignupScreen = (props) => {
   return (
     <View style={styles.container}>
       <Formik
-        onSubmit={(values) => handleSubmit(values)}
+        onSubmit={handleSubmit}
         initialValues={initialValues}
         //validationSchema={validationSchema}
       >
