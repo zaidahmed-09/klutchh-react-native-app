@@ -142,7 +142,7 @@ export const signupUser = (signUpData, setLoading, navigation, setTimer) => {
         console.log("response signup => ", response);
         // // console.log('====================================');
         try {
-          console.log("try response signup => ", response?.data?.msg);
+          console.log("try response signup => ", response?.data);
           switch (response?.data?.msg) {
             case "No need, already verified":
               Alert.alert("Error", "Already verified! Login to continue");

@@ -5,6 +5,7 @@ import colors from '../../constants/colors';
 import { GlobalButton } from '../../components/reusables';
 
 import {icons} from '../../utills/Icons'
+import { LocalNotification } from '../../utills/LocalPushController';
 
 
 const DeviceWidth = Dimensions.get("window").width;
@@ -17,6 +18,9 @@ const TextWhite = styled(Text)`
 `
 
 export default function LandingScreen({navigation}) {
+    const handleButton = () => {
+        LocalNotification();
+    }
 
 
   return (
@@ -48,7 +52,9 @@ export default function LandingScreen({navigation}) {
                     </View>
 
                     <GlobalButton 
-                        onPress={()=>navigation.navigate("Signup",{isRefernal: false,})}>
+                        //onPress={handleButton}
+                        onPress={()=>navigation.navigate("Signup",{isRefernal: false,})}
+                        >
                             <TextWhite style={{fontFamily:"Inter-Bold", fontSize:16 }} >
                             REGISTER
                             </TextWhite>
