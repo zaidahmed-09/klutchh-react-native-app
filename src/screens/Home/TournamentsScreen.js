@@ -21,6 +21,7 @@ import { Skeleton } from "react-native-skeletons";
 import { icons } from "../../utills/Icons";
 import { useDispatch, useSelector } from "react-redux";
 import AlertModal from "../../components/modal/AlertModal";
+import { sortTournaments } from "../../extras/utils";
 
 
 const DeviceWidth = Dimensions.get("window").width;
@@ -64,7 +65,7 @@ const TournamentsScreen = ({ navigation }) => {
 
   const liveMatchesArray = [];
 
-  const [matches, setMatches] = useState([]);
+  const [tournamentsMatches, setTournamentsMatches] = useState([]);
   const [loading, setLoading] = useState(false);
   const [game, setGame] = useState(0);
 
@@ -91,8 +92,8 @@ const TournamentsScreen = ({ navigation }) => {
 
     var tourMatch = aggregateMatchesByTournaments(res.data.data)
 
-    const new_match = tourMatch.data
-    new_match.forEach(element => {
+    const all_tournaments = tourMatch.data
+    all_tournaments.forEach(element => {
       //console.log("element => ", element.matches)
       element.matches.forEach((match, index) => {
 
@@ -102,9 +103,9 @@ const TournamentsScreen = ({ navigation }) => {
       });
     });
 
-    console.log("new_match ", new_match);
+    console.log("all_tournaments ", all_tournaments);
 
-    setMatches(new_match);
+    setTournamentsMatches(all_tournaments);
 
   };
   const aggregateMatchesByTournaments = (matches) =>{
@@ -203,7 +204,7 @@ const TournamentsScreen = ({ navigation }) => {
               }}
             />
           ) : 
-          matches?.filter((match, index) => {
+          tournamentsMatches?.filter((match, index) => {
             if (!allCompleted(match)) {
               if (game === 0) {
                 return true
@@ -223,11 +224,11 @@ const TournamentsScreen = ({ navigation }) => {
             <View style={{marginBottom: Platform.OS === 'ios' ? 40 : 60, marginTop: 20}} >
 
               <View>
-                  {matches && <View style={{}} >
+                  {tournamentsMatches && <View style={{}} >
                     <View style={{}} >
                       <TournamentCardLive
                           navigation={navigation}
-                          tournamentMatches={matches}
+                          tournamentMatches={tournamentsMatches}
                         />
                     </View>
                   </View>}
@@ -266,7 +267,9 @@ const TournamentsScreen = ({ navigation }) => {
                 </Text>
               </View>}
 
-            {matches.map((match, index) => {
+            {sortTournaments(tournamentsMatches).map((match, index) => {
+
+              console.log("match  matches =>>>>> ", match.matches);
               if (!allCompleted(match)) {
                 if (game === 0) {
                   return (
