@@ -48,8 +48,7 @@ const TournamentCard = ({
 
   return (
     <View>
-
-      {liveMatchesArray && <Text style={{
+      {liveMatchesArray && liveMatchesArray?.length !=0 && <Text style={{
         color:"#fff",
         fontSize: 18,
         padding:10,
