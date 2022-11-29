@@ -166,6 +166,7 @@ const MatchDetails = ({ navigation, route,  }) => {
                                   match_type={item}
                                   border_color={match?.border_color}
                                   border_color2={match?.border_color2}
+                                  match_name={match.name}
                                 />
                               </TouchableOpacity>
                             ))}

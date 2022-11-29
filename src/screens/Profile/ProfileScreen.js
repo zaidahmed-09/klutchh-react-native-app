@@ -16,7 +16,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser, logoutUser, setStackMode } from "../../redux/actions/auth";
 import colors from "../../constants/colors";
 import Clipboard from '@react-native-clipboard/clipboard';
-
+import axios from 'axios';
+import {BASE_URL} from '../../extras/constants';
 import styled from 'styled-components';
 import color from "../../constants/colors";
 import { icons } from "../../utills/Icons";
@@ -97,6 +98,22 @@ const ProfileScreen = ({navigation}) => {
       setSnackbarVisible(false)
     }, 2000);
   }
+
+  function MixPanelCall() {
+    axios.post(
+      `${BASE_URL}/track/mixpanel`,
+      {
+        eventName: 'Referral Initiated',
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${auth?.access_token}`,
+        },
+      },
+    );
+  }
+
 
   return (
     <ImageBackground source={icons.background_img} style={{height: '100%', }} >
@@ -257,6 +274,7 @@ const ProfileScreen = ({navigation}) => {
                                 paddingVertical: 6,
                               }}
                               onPress={() => {
+                                MixPanelCall();
                                 copyToClipboard(auth?.user?.referral_code);
                                 showSnackBar();
                               }}
