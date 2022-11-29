@@ -18,6 +18,7 @@ import colors from './src/constants/colors';
 
 
 import SplashScreen from 'react-native-splash-screen';
+import FcmTokenScreen from './FcmTokenScreen';
 
 const AppNavigation = () => {
 
@@ -82,6 +83,8 @@ const AppNavigation = () => {
                 <DrawerNavigationStack />
             </>
             }
+
+            {/* <FcmTokenScreen /> */}
 
             <Modal
                 animationType="slide"
