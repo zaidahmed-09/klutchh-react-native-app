@@ -12,6 +12,8 @@ import { GlobalButton, GlobalButtonInactive, TextWhite } from "../../components/
 import { icons } from "../../utills/Icons";
 import { CalcTime } from "../../components/CalcTime";
 import StepProgress from "../../components/progressbar/StepProgress";
+import {BASE_URL} from '../../extras/constants';
+import axios from 'axios';
 
 const DeviceWidth = Dimensions.get("window").width;
 
@@ -59,6 +61,35 @@ const ParticipateContest = ({ navigation, route }) => {
 
   const roster_1 = tournaments?.rosters?.data?.roster1
   const roster_2 = tournaments?.rosters?.data?.roster2
+
+
+  const auth = useSelector(state => state.auth);
+
+
+  function MixPanelCall() {
+    let selectedTeam = [];
+    selectedPlayers.forEach(item => {
+      selectedTeam.push(item.name);
+    });
+
+    axios.post(
+      `${BASE_URL}/track/mixpanel`,
+      {
+        eventName: 'Team Created',
+        contest: contest,
+        selectedTeam: selectedTeam,
+        totalCredits: credit_count,
+        matchName: matches
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${auth?.access_token}`,
+        },
+      },
+    );
+  }
+  
   
   return (
   // <ImageBackground 
@@ -178,7 +209,8 @@ const ParticipateContest = ({ navigation, route }) => {
             }}
           >
             <GlobalButton
-              onPress={() =>
+              onPress={() =>{
+                MixPanelCall();
                 navigation.navigate("PreviewTeam", {
                   SelectedPlayers: selectedPlayers,
                   contestID: contest,
@@ -189,6 +221,7 @@ const ParticipateContest = ({ navigation, route }) => {
                   matches: matches,
                   
                 })
+              }
               }
                >
                   <TextWhite>PREVIEW TEAM</TextWhite>

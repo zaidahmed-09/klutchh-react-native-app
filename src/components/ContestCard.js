@@ -3,14 +3,37 @@ import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 import { ProgressBar } from "react-native-paper";
 import check from "../../assets/Checkmark.png"
 import trophy from "../../assets/Trophy.png"
-
+import {BASE_URL} from '../extras/constants';
+import axios from 'axios';
+import {connect, useDispatch, useSelector} from 'react-redux';
 import { icons } from "../utills/Icons";
 
-const ContestCard = ({ navigation, contest, isGroupType, hideTitle, match_type }) => {
+const ContestCard = ({ navigation, contest, isGroupType, hideTitle, match_type ,match_name}) => {
 
   console.log('====================================');
   console.log("contest match_type => ", contest?.min_win_percentage);
   console.log('====================================');
+
+
+  const auth = useSelector(state => state.auth);
+
+  function MixPanelCall() {
+    axios.post(
+      `${BASE_URL}/track/mixpanel`,
+      {
+        eventName: 'Contest Selected',
+        contest: contest,
+        matchName: match_name,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${auth?.access_token}`,
+        },
+      },
+    );
+  }
+
   return (
 
     Number(contest?.max_entries) - Number(contest?.current_entries) ? 
@@ -72,6 +95,7 @@ const ContestCard = ({ navigation, contest, isGroupType, hideTitle, match_type }
                 marginTop:6,
               }}
               onPress={() => {
+                MixPanelCall();
                 navigation?.navigate("ContestDetails", {
                   contestID: contest._id,
                   match_type: match_type,
