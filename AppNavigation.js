@@ -24,6 +24,8 @@ const AppNavigation = () => {
 
     const auth = useSelector((state) => state.auth);
 
+    console.log("auth =>>> ", auth?.access_token);
+
     const dispatch = useDispatch();
 
     const [hasToken, setHasToken] = React.useState(false);

@@ -81,7 +81,7 @@ export const loginUser = (loginData, setLoading, navigation) => {
     axios
       .post(`${BASE_URL}/user/mobileLogin`, loginData)
       .then((response) => {
-        console.log("response => ", response);
+        //console.log("response => ", response);
         if (response.data.status == 'SUCCESS' || response.data.token) {
           navigation.navigate("Otp", { loginData: loginData});
           //dispatch(completeLogin(response.data.token));

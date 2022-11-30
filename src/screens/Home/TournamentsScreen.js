@@ -269,7 +269,7 @@ const TournamentsScreen = ({ navigation }) => {
 
             {sortTournaments(tournamentsMatches).map((match, index) => {
 
-              console.log("match  matches =>>>>> ", match.matches);
+              //console.log("match  matches =>>>>> ", match.matches);
               if (!allCompleted(match)) {
                 if (game === 0) {
                   return (

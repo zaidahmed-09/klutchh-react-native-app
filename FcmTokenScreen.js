@@ -4,12 +4,16 @@ import { Text, TouchableOpacity, View } from 'react-native'
 import messaging from '@react-native-firebase/messaging';
 import Clipboard from '@react-native-clipboard/clipboard';
 import colors from './src/constants/colors';
+import { LocalNotification } from './src/utills/LocalPushController';
 
 const FcmTokenScreen = () => {
 
     const [fcmToken, setFcmToken] = useState('');
     const [toast, setToast] = useState(false);
 
+    const localNotification = () => {
+        LocalNotification()
+    }
  
     useEffect(() => {
 
@@ -32,6 +36,7 @@ const FcmTokenScreen = () => {
     };
 
     const getToken = async () => {
+        console.log("getToken => ");
         let fcmToken = ''
         //await AsyncStorage.getItem('fcmToken');
         if (!fcmToken) {
@@ -64,7 +69,7 @@ const FcmTokenScreen = () => {
                 <Text style={{color: 'white', fontSize: 18, marginVertical: 20}} >{fcmToken}</Text>
             </View>
 
-            <TouchableOpacity onPress={() => {copyText()}}>
+            <TouchableOpacity onPress={() => {localNotification()}}>
                 <View style={{alignItems: 'center', justifyContent: 'center', height: 50, width: 220, borderRadius: 10, backgroundColor: colors.NEW_THEME_RED}} >
                     <Text style={{color: 'white', fontSize: 20, color: 'white'}} >Copy FCM Token</Text>
                 </View>

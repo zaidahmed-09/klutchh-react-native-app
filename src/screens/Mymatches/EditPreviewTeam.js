@@ -108,7 +108,7 @@ function EditPreviewTeam({
       .then((response) => {
 
         console.log('====================================');
-        console.log("response =>>>> ", response);
+       // console.log("response =>>>> ", response);
         console.log('====================================');
         Alert.alert("SUCCESS", "Your team has been updated successfully");
 

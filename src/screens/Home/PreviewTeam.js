@@ -105,7 +105,7 @@ function PreviewTeam({
       .then((response) => {
 
         console.log('====================================');
-        console.log("response =>>>> ", response);
+       // console.log("response =>>>> ", response);
         console.log('====================================');
         Alert.alert(response.data.status, response.data.msg);
         navigation?.popToTop();

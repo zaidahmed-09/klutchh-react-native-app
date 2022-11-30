@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "946029310601",
-    "project_id": "klutchh-ed64f",
-    "storage_bucket": "klutchh-ed64f.appspot.com"
+    "project_number": "600947209366",
+    "project_id": "klutchh-reactnative",
+    "storage_bucket": "klutchh-reactnative.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:946029310601:android:c229aa259179a7a1d88c58",
+        "mobilesdk_app_id": "1:600947209366:android:34bc37865811eda1f63eb7",
         "android_client_info": {
           "package_name": "com.klutchh"
         }
       },
       "oauth_client": [
         {
-          "client_id": "946029310601-nrsh7pashh4ib2ppmvmocoonoqrsscve.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.klutchh",
-            "certificate_hash": "81f5e7a94d3a7bc354a9757fe3deeb6dd6958d24"
-          }
-        },
-        {
-          "client_id": "946029310601-htaaoab7lnsfkf2moiv2gumvgjd1fpbf.apps.googleusercontent.com",
+          "client_id": "600947209366-ccrl6f9mi0oe0n8n4it6jq81mkveposs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDuwJQYLq-08WgZf5XFjFByOapYR9THJzE"
+          "current_key": "AIzaSyDION6Pj2huKHNoaFFTY-X60w-Fyp9crtI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "946029310601-htaaoab7lnsfkf2moiv2gumvgjd1fpbf.apps.googleusercontent.com",
+              "client_id": "600947209366-ccrl6f9mi0oe0n8n4it6jq81mkveposs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

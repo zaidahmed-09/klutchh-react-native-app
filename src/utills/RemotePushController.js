@@ -16,7 +16,7 @@ const RemotePushController  = () => {
                 console.log("Remote controller ", notification);
             },
 
-            senderID: '946029310601',
+            senderID: '600947209366',
             popInitialNotification: true,
             requestPermissions: true,
         });
