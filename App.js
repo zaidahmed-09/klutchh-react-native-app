@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
-import React, {useEffect} from 'react'
-import { StyleSheet, Text, View, Platform, LogBox } from "react-native";
+import React, {useEffect,useRef} from 'react'
+import { StyleSheet, Text, View, Platform, LogBox ,AppState} from "react-native";
 
 import AppNavigation from './AppNavigation';
 import { Provider } from "react-redux";
@@ -56,6 +56,26 @@ const App = () => {
         }
     }
     
+    const appState = useRef(AppState.currentState);
+  
+    useEffect(() => {
+      const subscription = AppState.addEventListener("change", nextAppState => {
+        if (
+          appState.current.match(/inactive|background/) &&
+          nextAppState === "active"
+        ) {
+          console.log("App has come to the foreground!");
+        }
+  
+        appState.current = nextAppState;
+        console.log("AppState", appState.current);
+      });
+  
+      return () => {
+        subscription.remove();
+      };
+    }, []);
+
     return (
         <QueryClientProvider client={queryClient}>
             <Provider store={store}>
