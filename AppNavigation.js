@@ -1,6 +1,6 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useRef} from 'react'
 
-import { StyleSheet, Text, View, Platform, StatusBar, Linking, Modal, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Platform, StatusBar, Linking, Modal, TouchableOpacity,AppState } from "react-native";
 
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -31,8 +31,51 @@ const AppNavigation = () => {
     const [hasToken, setHasToken] = React.useState(false);
     const [modalVisible, setModalVisible] = React.useState(false);
 
+    const appState = useRef(AppState.currentState);
+
+
     useEffect(() => {
         checkLogin();
+        const subscription = AppState.addEventListener("change", nextAppState => {
+          if (
+            appState.current.match(/inactive|background/) &&
+            nextAppState === "active"
+          ) {
+            console.log("App has come to the foreground!");
+          }
+    
+          appState.current = nextAppState;
+          if(appState.current == "active"){
+              axios.post(`${BASE_URL}/track/mixpanel`,
+              {
+                  eventName : "App Open"
+              },
+              {
+                  headers: {
+                      "Content-Type": "application/json",
+                      Authorization: `Bearer ${auth?.access_token}`,
+                    },
+              }
+              )
+          }else if(appState.current == "background"){
+            axios.post(`${BASE_URL}/track/mixpanel`,
+            {
+                eventName : "App Close"
+            },
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${auth?.access_token}`,
+                  },
+            }
+            )
+          }
+          console.log("AppState", appState.current);
+        });
+    
+        return () => {
+          subscription.remove();
+        };
     }, [])
 
     React.useEffect(() => {
@@ -66,6 +109,7 @@ const AppNavigation = () => {
     
 
     //console.log("AppNavigation auth => ", auth);
+    
     
     return (
         <NavigationContainer>

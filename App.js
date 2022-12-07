@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, {useEffect} from 'react'
-import { StyleSheet, Text, View, Platform, LogBox } from "react-native";
+import { StyleSheet, Text, View, Platform, LogBox} from "react-native";
 
 import AppNavigation from './AppNavigation';
 import { Provider } from "react-redux";
@@ -55,6 +55,7 @@ const App = () => {
             console.log("fcm already : " + fcmToken);
         }
     }
+    
     
     return (
         <QueryClientProvider client={queryClient}>
